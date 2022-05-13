@@ -1,9 +1,9 @@
-﻿using FacebookProject.Models;
+﻿using FacebookCloneApi.Models;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace FacebookProject.Processors
+namespace FacebookCloneApi.Processors
 {
     public interface IPostsProcessor
     {

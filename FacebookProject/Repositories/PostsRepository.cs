@@ -1,10 +1,10 @@
-﻿using FacebookProject.Models;
+﻿using FacebookCloneApi.Models;
 using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace FacebookProject.Repositories
+namespace FacebookCloneApi.Repositories
 {
     public class PostsRepository : IPostsRepository
     {

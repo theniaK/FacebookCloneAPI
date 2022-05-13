@@ -1,10 +1,10 @@
-﻿using FacebookProject.Models;
-using FacebookProject.Repositories;
+﻿using FacebookCloneApi.Models;
+using FacebookCloneApi.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace FacebookProject.Processors
+namespace FacebookCloneApi.Processors
 {
     public class PostsProcessor :IPostsProcessor
     {

@@ -1,12 +1,12 @@
-﻿using FacebookProject.Models;
-using FacebookProject.Processors;
+﻿using FacebookCloneApi.Models;
+using FacebookCloneApi.Processors;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Web.Http.Cors;
 
-namespace FacebookProject.Controllers
+namespace FacebookCloneApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

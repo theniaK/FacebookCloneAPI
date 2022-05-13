@@ -1,7 +1,7 @@
 ﻿using MongoDB.Bson.Serialization.Attributes;
 using System;
 
-namespace FacebookProject.Models
+namespace FacebookCloneApi.Models
 {
     public class PostInfo
     {
