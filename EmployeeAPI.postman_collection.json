@@ -1,0 +1,194 @@
+{
+	"info": {
+		"_postman_id": "9b9e4707-d467-4a67-b653-60b2cc646be4",
+		"name": "EmployeeAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Ping",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"strictSSL": false
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/Posts/ping",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"Posts",
+						"ping"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post Posts",
+			"protocolProfileBehavior": {
+				"strictSSL": false
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n    \"New Title\": [\r\n        \"Have a nice day\"\r\n    ],    \r\n    \r\n    \"somehtign\": [\r\n        \"fgdgd\"\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/Posts/post",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"Posts",
+						"post"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post Posts",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"strictSSL": false
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/Posts/get",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"Posts",
+						"get"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post Post",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"strictSSL": false
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/Posts/get/b2a6c10a-0e1b-47a5-8ba8-fa446fd5ebed",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"Posts",
+						"get",
+						"b2a6c10a-0e1b-47a5-8ba8-fa446fd5ebed"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Post",
+			"protocolProfileBehavior": {
+				"strictSSL": false
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/Posts/delete/b2a6c10a-0e1b-47a5-8ba8-fa446fd5ebed",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"Posts",
+						"delete",
+						"b2a6c10a-0e1b-47a5-8ba8-fa446fd5ebed"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

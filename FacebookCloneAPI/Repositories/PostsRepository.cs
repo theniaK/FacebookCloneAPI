@@ -22,7 +22,7 @@ namespace FacebookCloneApi.Repositories
             // This is a faster ways to traverse a db when you have million elements!
             //var filter = Builders<PostInfo>.IndexKeys.Ascending(e => e.Id == id);
 
-            await db.DeleteManyAsync(filter);
+            await db.DeleteOneAsync(filter);
         }
 
         public async Task<PostInfo> Find(Guid id)
@@ -43,13 +43,6 @@ namespace FacebookCloneApi.Repositories
         {
             foreach (var info in postInfos)
             {
-                var cursor = await db.FindAsync(Builders<PostInfo>.Filter.Empty);
-                var infos = cursor.ToList();
-
-                if (infos.Count != 0)
-                {
-                    continue;
-                }
                 var postInfo = new PostInfo
                 {
                     Id = new Guid(),
@@ -58,7 +51,14 @@ namespace FacebookCloneApi.Repositories
                     Date = DateTime.Now,
                 };
 
-                await db.InsertOneAsync(postInfo);
+                var cursor = await db.FindAsync(s => s.Title == info.Key);
+                var infos = cursor.FirstOrDefault();
+
+                if (infos == null)
+                {
+                    await db.InsertOneAsync(postInfo);
+                }
+
             }
         }
     }

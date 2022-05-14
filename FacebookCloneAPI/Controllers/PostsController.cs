@@ -27,8 +27,8 @@ namespace FacebookCloneApi.Controllers
             return await Task.FromResult(true);
         }
 
-        // GET api/Posts/5
-        [HttpGet("{id}")]
+        // GET api/Posts/all/5
+        [HttpGet("get/{id}")]
         public async Task<ActionResult<PostInfo>> Get(Guid id)
         {
             var result = this.processor.Find(id);
@@ -41,7 +41,7 @@ namespace FacebookCloneApi.Controllers
         }
 
         // GET api/Posts/all
-        [HttpGet("all")]
+        [HttpGet("get")]
         public async Task<ActionResult<List<PostInfo>>> GetAll()
         {
             return await this.processor.FindAll();
@@ -60,11 +60,11 @@ namespace FacebookCloneApi.Controllers
             return NoContent();
         }
 
-        // DELETE api/Posts/5
-        [HttpDelete("{id}")]
-        public async Task<ActionResult> Delete(Guid postId)
+        // DELETE api/Posts/delete/5
+        [HttpDelete("delete/{id}")]
+        public async Task<ActionResult> Delete(Guid id)
         {
-            await this .processor.Delete(postId);
+            await this .processor.Delete(id);
             return await Task.FromResult(Ok());
         }
     }
