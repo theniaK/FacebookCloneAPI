@@ -55,7 +55,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": " {\r\n    \"New Title\": [\r\n        \"Have a nice day\"\r\n    ],    \r\n    \r\n    \"somehtign\": [\r\n        \"fgdgd\"\r\n    ]\r\n}",
+					"raw": " {\r\n    \"I feel very happy\": [\r\n        \"I have created anew web site and an API today and these are the news. Tomorrow i will post again\"\r\n    ],    \r\n    \r\n    \"Drinks!\": [\r\n        \"Today i met some friends and we visited a new place. It was awesome!\"\r\n    ]\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -73,6 +73,43 @@
 						"api",
 						"Posts",
 						"post"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Post Post",
+			"protocolProfileBehavior": {
+				"strictSSL": false
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"Add single post!\",\r\n    \"description\": \"The new endpoind is ready for posting onle a single post! Great news :)\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/Posts/post/one",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"Posts",
+						"post",
+						"one"
 					]
 				}
 			},
@@ -174,7 +211,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:5000/api/Posts/delete/b2a6c10a-0e1b-47a5-8ba8-fa446fd5ebed",
+					"raw": "http://localhost:5000/api/Posts/delete/b7d1b98a-1d7c-4fdc-b672-07380fb81979",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -184,7 +221,43 @@
 						"api",
 						"Posts",
 						"delete",
-						"b2a6c10a-0e1b-47a5-8ba8-fa446fd5ebed"
+						"b7d1b98a-1d7c-4fdc-b672-07380fb81979"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Posts",
+			"protocolProfileBehavior": {
+				"strictSSL": false
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/Posts/delete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"Posts",
+						"delete"
 					]
 				}
 			},
