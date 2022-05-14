@@ -34,5 +34,10 @@ namespace FacebookCloneApi.Processors
         {
             await this.repo.Delete(id);
         }
+
+        public async Task Delete()
+        {
+            await this.repo.Delete();
+        }
     }
 }

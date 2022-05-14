@@ -14,5 +14,7 @@ namespace FacebookCloneApi.Repositories
         Task<List<PostInfo>> FindAll();
 
         Task Delete(Guid id);
+
+        Task Delete();
     }
 }

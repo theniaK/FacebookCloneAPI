@@ -14,5 +14,7 @@ namespace FacebookCloneApi.Processors
        Task<List<PostInfo>> FindAll();
 
        Task Delete(Guid id);
+
+       Task Delete();
     }
 }
