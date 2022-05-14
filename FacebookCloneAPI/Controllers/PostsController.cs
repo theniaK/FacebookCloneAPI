@@ -40,6 +40,19 @@ namespace FacebookCloneApi.Controllers
             return NoContent();
         }
 
+        // POST api/Posts/post
+        [HttpPost("post/one")]
+        public async Task<ActionResult> PostOne([FromBody] PostInfo postInfo)
+        {
+            if (postInfo != null)
+            {
+                await this.processor.Insert(postInfo);
+                return await Task.FromResult(Ok());
+            }
+
+            return NoContent();
+        }
+
         // GET api/Posts/all/5
         [HttpGet("get/{id}")]
         public async Task<ActionResult<PostInfo>> Get(Guid id)

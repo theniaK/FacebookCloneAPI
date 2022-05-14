@@ -20,6 +20,11 @@ namespace FacebookCloneApi.Processors
             await this.repo.Insert(postInfos);
         }
 
+        public async Task Insert(PostInfo postInfo)
+        {
+            await this.repo.Insert(postInfo);
+        }
+
         public async Task<PostInfo> Find(Guid id)
         {
             return await this.repo.Find(id);

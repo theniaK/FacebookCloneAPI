@@ -9,6 +9,8 @@ namespace FacebookCloneApi.Repositories
     {
         Task Insert(Dictionary<string, List<string>> postInfos);
 
+        Task Insert(PostInfo postInfo);
+
         Task<PostInfo> Find(Guid id);
 
         Task<List<PostInfo>> FindAll();

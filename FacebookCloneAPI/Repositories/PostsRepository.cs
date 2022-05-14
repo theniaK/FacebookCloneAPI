@@ -35,7 +35,25 @@ namespace FacebookCloneApi.Repositories
                 {
                     await db.InsertOneAsync(postInfo);
                 }
+            }
+        }
 
+        public async Task Insert(PostInfo postInfo)
+        {
+            var info = new PostInfo
+            {
+                Id = new Guid(),
+                Title = postInfo.Title,
+                Description = postInfo.Description,
+                Date = DateTime.Now,
+            };
+
+            var cursor = await db.FindAsync(s => s.Title == info.Title);
+            var infos = cursor.FirstOrDefault();
+
+            if (infos == null)
+            {
+                await db.InsertOneAsync(info);
             }
         }
 
