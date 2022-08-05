@@ -1,5 +1,5 @@
-﻿using FacebookCloneApi.Processors;
-using FacebookCloneApi.Repositories;
+﻿using FacebookCloneAPI.Processors;
+using FacebookCloneAPI.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -29,8 +29,8 @@ namespace FacebookCloneApi
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
-            services.AddSingleton<IPostsProcessor, PostsProcessor>();
-            services.AddSingleton<IPostsRepository, PostsRepository>();
+            services.AddSingleton<IUserProcessor, UserProcessor>();
+            services.AddSingleton<IUserRepository, UserRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
