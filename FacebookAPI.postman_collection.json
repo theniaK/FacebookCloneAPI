@@ -27,7 +27,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:5000/api/Posts/ping",
+					"raw": "http://localhost:5000/api/Users/ping",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -35,7 +35,7 @@
 					"port": "5000",
 					"path": [
 						"api",
-						"Posts",
+						"Users",
 						"ping"
 					]
 				}
@@ -43,7 +43,7 @@
 			"response": []
 		},
 		{
-			"name": "Post Posts",
+			"name": "Post User",
 			"protocolProfileBehavior": {
 				"strictSSL": false
 			},
@@ -55,7 +55,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": " {\r\n    \"I feel very happy\": [\r\n        \"I have created anew web site and an API today and these are the news. Tomorrow i will post again\"\r\n    ],    \r\n    \r\n    \"Drinks!\": [\r\n        \"Today i met some friends and we visited a new place. It was awesome!\"\r\n    ]\r\n}",
+					"raw": "{\r\n    \"username\": \"username\",\r\n    \"password\": \"password\",\r\n    \"firstName\": \"\",\r\n    \"lastName\": \"\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -63,7 +63,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:5000/api/Posts/post",
+					"raw": "http://localhost:5000/api/Users/postUser",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -71,52 +71,15 @@
 					"port": "5000",
 					"path": [
 						"api",
-						"Posts",
-						"post"
+						"Users",
+						"postUser"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "Post Post",
-			"protocolProfileBehavior": {
-				"strictSSL": false
-			},
-			"request": {
-				"auth": {
-					"type": "noauth"
-				},
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\r\n    \"title\": \"Add single post!\",\r\n    \"description\": \"The new endpoind is ready for posting onle a single post! Great news :)\"\r\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:5000/api/Posts/post/one",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "5000",
-					"path": [
-						"api",
-						"Posts",
-						"post",
-						"one"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get Posts",
+			"name": "Get User",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true,
 				"strictSSL": false
@@ -129,7 +92,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "",
+					"raw": "{\r\n    \"username\":\"test\",\r\n    \"password\":\"test@gmail.com\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -137,7 +100,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:5000/api/Posts/get",
+					"raw": "http://localhost:5000/api/Users/getUser",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -145,15 +108,15 @@
 					"port": "5000",
 					"path": [
 						"api",
-						"Posts",
-						"get"
+						"Users",
+						"getUser"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "Get Post",
+			"name": "Get User 204",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true,
 				"strictSSL": false
@@ -166,7 +129,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "",
+					"raw": "{\r\n    \"username\":\"\",\r\n    \"password\":\"\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -174,7 +137,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:5000/api/Posts/get/b2a6c10a-0e1b-47a5-8ba8-fa446fd5ebed",
+					"raw": "http://localhost:5000/api/Users/getUser",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -182,82 +145,8 @@
 					"port": "5000",
 					"path": [
 						"api",
-						"Posts",
-						"get",
-						"b2a6c10a-0e1b-47a5-8ba8-fa446fd5ebed"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Delete Post",
-			"protocolProfileBehavior": {
-				"strictSSL": false
-			},
-			"request": {
-				"auth": {
-					"type": "noauth"
-				},
-				"method": "DELETE",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:5000/api/Posts/delete/b7d1b98a-1d7c-4fdc-b672-07380fb81979",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "5000",
-					"path": [
-						"api",
-						"Posts",
-						"delete",
-						"b7d1b98a-1d7c-4fdc-b672-07380fb81979"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Delete Posts",
-			"protocolProfileBehavior": {
-				"strictSSL": false
-			},
-			"request": {
-				"auth": {
-					"type": "noauth"
-				},
-				"method": "DELETE",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "http://localhost:5000/api/Posts/delete",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "5000",
-					"path": [
-						"api",
-						"Posts",
-						"delete"
+						"Users",
+						"getUser"
 					]
 				}
 			},
