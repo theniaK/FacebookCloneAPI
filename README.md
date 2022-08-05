@@ -1,3 +1,4 @@
 # FacebookCloneAPI
 
-To start the app double click the FacebookCloneAPI.csproj file
+A Facebook clone for testing my skills.
+
