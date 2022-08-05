@@ -27,10 +27,10 @@ namespace FacebookCloneApi.Controllers
 
         // POST api/Users/postUsers
         [HttpPost("postUser")]
-        public async Task<ActionResult> Post([FromBody] User user)
+        public async Task<ActionResult<bool>> Post([FromBody] User user)
         {
-            await this.processor.InsertAsync(user);
-            return await Task.FromResult(Ok());
+            var userExists = await this.processor.InsertAsync(user);
+            return await Task.FromResult(userExists);
         }
 
 
@@ -48,7 +48,7 @@ namespace FacebookCloneApi.Controllers
                 return await Task.FromResult(NotFound());
             }
 
-            return await Task.FromResult(Ok(User));
+            return await Task.FromResult(user);
         }
     }
 }

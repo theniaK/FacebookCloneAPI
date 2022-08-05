@@ -17,6 +17,6 @@ namespace FacebookCloneAPI.Repositories
         /// Insert a user in the db.
         /// </summary>
         /// <param name="user"></param>
-        Task InsertAsync(User user);
+        Task<bool> InsertAsync(User user);
     }
 }

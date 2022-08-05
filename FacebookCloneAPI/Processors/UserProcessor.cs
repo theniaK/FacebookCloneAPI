@@ -19,9 +19,10 @@ namespace FacebookCloneAPI.Processors
             return result;
         }
 
-        public async Task InsertAsync(User user)
+        public async Task<bool> InsertAsync(User user)
         {
-            await this.repo.InsertAsync(user);
+            var userExists = await this.repo.InsertAsync(user);
+            return userExists;
         }
     }
 }

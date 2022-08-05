@@ -16,9 +16,7 @@ namespace FacebookCloneAPI.Repositories
 
         public async Task<User> FindAsync(User user)
         {
-            var builder = Builders<User>.Filter;
-            var filter = builder.Gt("Username", user.Username) & builder.Gt("Password", user.Password);
-            var cursor = await db.FindAsync(filter);
+            var cursor = await db.FindAsync(s => s.Username == user.Username);
             var result = cursor.FirstOrDefault();
             if (result == null)
             {
@@ -28,27 +26,26 @@ namespace FacebookCloneAPI.Repositories
             return await Task.FromResult(result);
         }
 
-        public async Task InsertAsync(User user)
+        public async Task<bool> InsertAsync(User user)
         {
-            var builder = Builders<User>.Filter;
-            var filter = builder.Gt("Username", user.Username) & builder.Gt("Password", user.Password);
-            var cursor = await db.FindAsync(filter);
+            var cursor = await db.FindAsync(s => s.Username == user.Username);
             var result = cursor.FirstOrDefault();
-            //var result = db.Find(s => s.FirstName == user.FirstName).FirstOrDefault();
-
-            if (result == null)
+            if (result != null)
             {
-                var newUser = new User
-                {
-                    Id = System.Guid.NewGuid(),
-                    FirstName = user.FirstName,
-                    LastName = user.LastName,
-                    Username = user.Username,
-                    Password = user.Password
-                };
-
-                await db.InsertOneAsync(newUser);
+                return false;
             }
+
+            var newUser = new User
+            {
+                Id = System.Guid.NewGuid(),
+                FirstName = user.FirstName,
+                LastName = user.LastName,
+                Username = user.Username,
+                Password = user.Password
+            };
+
+            await db.InsertOneAsync(newUser);
+            return true;
         }
     }
 }
