@@ -13,15 +13,15 @@ namespace FacebookCloneAPI.Processors
             this.repo = repo;
         }
 
-        public async Task<User> Find(User user)
+        public async Task<User> FindAsync(User user)
         {
-            var result = await this.repo.Find(user);
+            var result = await this.repo.FindAsync(user);
             return result;
         }
 
-        public async Task Insert(User user)
+        public async Task InsertAsync(User user)
         {
-            await this.repo.Insert(user);
+            await this.repo.InsertAsync(user);
         }
     }
 }

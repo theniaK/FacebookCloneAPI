@@ -14,12 +14,13 @@ namespace FacebookCloneAPI.Repositories
             this.db = DBHelper.GetUserDB(client);
         }
 
-        public async Task<User> Find(User user)
+        public async Task<User> FindAsync(User user)
         {
-            var cursor = await db.FindAsync(i => i.Username == user.Username 
-                                              && i.Password == user.Password);
+            var builder = Builders<User>.Filter;
+            var filter = builder.Gt("Username", user.Username) & builder.Gt("Password", user.Password);
+            var cursor = await db.FindAsync(filter);
             var result = cursor.FirstOrDefault();
-            if(result == null)
+            if (result == null)
             {
                 return null;
             }
@@ -27,11 +28,14 @@ namespace FacebookCloneAPI.Repositories
             return await Task.FromResult(result);
         }
 
-        public async Task Insert(User user)
+        public async Task InsertAsync(User user)
         {
-            var cursor = await db.FindAsync(i => i.Username == user.Username 
-                                              && i.Password == user.Password);
+            var builder = Builders<User>.Filter;
+            var filter = builder.Gt("Username", user.Username) & builder.Gt("Password", user.Password);
+            var cursor = await db.FindAsync(filter);
             var result = cursor.FirstOrDefault();
+            //var result = db.Find(s => s.FirstName == user.FirstName).FirstOrDefault();
+
             if (result == null)
             {
                 var newUser = new User

@@ -1,10 +1,11 @@
 ﻿using MongoDB.Bson.Serialization.Attributes;
 using System;
+
 namespace FacebookCloneAPI.Models
 {
     public class User
     {
-        [BsonElement]
+        [BsonId]
         public Guid Id { get; set; }
 
         [BsonElement]

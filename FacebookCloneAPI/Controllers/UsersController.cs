@@ -29,7 +29,7 @@ namespace FacebookCloneApi.Controllers
         [HttpPost("postUser")]
         public async Task<ActionResult> Post([FromBody] User user)
         {
-            await this.processor.Insert(user);
+            await this.processor.InsertAsync(user);
             return await Task.FromResult(Ok());
         }
 
@@ -42,7 +42,7 @@ namespace FacebookCloneApi.Controllers
             {
                 return await Task.FromResult(NoContent());
             }
-            var result = this.processor.Find(user);
+            var result = await this.processor.FindAsync(user);
             if (result is null)
             {
                 return await Task.FromResult(NotFound());

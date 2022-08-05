@@ -11,12 +11,12 @@ namespace FacebookCloneAPI.Repositories
         /// <param name="username"></param>
         /// <param name="password"></param>
         /// <returns></returns>
-        Task<User> Find(User user);
+        Task<User> FindAsync(User user);
 
         /// <summary>
         /// Insert a user in the db.
         /// </summary>
         /// <param name="user"></param>
-        Task Insert(User user);
+        Task InsertAsync(User user);
     }
 }
