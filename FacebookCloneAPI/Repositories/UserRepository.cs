@@ -16,7 +16,8 @@ namespace FacebookCloneAPI.Repositories
 
         public async Task<User> Find(User user)
         {
-            var cursor = await db.FindAsync(i => i.Username == user.Username && i.Password == user.Password).ConfigureAwait(false);
+            var cursor = await db.FindAsync(i => i.Username == user.Username 
+                                              && i.Password == user.Password);
             var result = cursor.FirstOrDefault();
             if(result == null)
             {
@@ -28,12 +29,14 @@ namespace FacebookCloneAPI.Repositories
 
         public async Task Insert(User user)
         {
-            var cursor = await db.FindAsync(i => i.Username == user.Username && i.Password == user.Password).ConfigureAwait(false);
+            var cursor = await db.FindAsync(i => i.Username == user.Username 
+                                              && i.Password == user.Password);
             var result = cursor.FirstOrDefault();
             if (result == null)
             {
                 var newUser = new User
                 {
+                    Id = System.Guid.NewGuid(),
                     FirstName = user.FirstName,
                     LastName = user.LastName,
                     Username = user.Username,

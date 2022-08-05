@@ -7,8 +7,8 @@ namespace FacebookCloneAPI.Helper
     {
         public static IMongoCollection<User> GetUserDB(IMongoClient client)
         {
-            var database = client.GetDatabase("Facebook");
-            return database.GetCollection<User>("Users");
+            var database = client.GetDatabase(DBNames.database);
+            return database.GetCollection<User>(DBNames.collection);
         }
     }
 }
