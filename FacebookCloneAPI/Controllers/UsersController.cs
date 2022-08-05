@@ -36,15 +36,19 @@ namespace FacebookCloneApi.Controllers
 
         // GET api/Users/getUsers
         [HttpGet("getUser")]
-        public async Task<ActionResult> Get(string username, string password)
+        public async Task<ActionResult<User>> Get([FromBody] User user)
         {
-            var result = this.processor.Find(username, password);
+            if (string.IsNullOrEmpty(user.Username) || string.IsNullOrEmpty(user.Password))
+            {
+                return await Task.FromResult(NoContent());
+            }
+            var result = this.processor.Find(user);
             if (result is null)
             {
                 return await Task.FromResult(NotFound());
             }
 
-            return await Task.FromResult(Ok());
+            return await Task.FromResult(Ok(User));
         }
     }
 }

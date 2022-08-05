@@ -11,7 +11,7 @@ namespace FacebookCloneAPI.Processors
         /// <param name="username"></param>
         /// <param name="password"></param>
         /// <returns></returns>
-        Task<User> Find(string username, string password);
+        Task<User> Find(User user);
 
         /// <summary>
         /// Insert a user in the db.

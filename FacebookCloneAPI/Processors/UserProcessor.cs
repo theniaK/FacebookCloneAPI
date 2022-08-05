@@ -5,7 +5,7 @@ namespace FacebookCloneAPI.Processors
 {
     public class UserProcessor : IUserProcessor
     {
-        public Task<User> Find(string username, string password)
+        public Task<User> Find(User user)
         {
             throw new System.NotImplementedException();
         }
