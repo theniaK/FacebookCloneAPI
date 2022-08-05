@@ -1,6 +1,22 @@
-﻿namespace FacebookCloneAPI.Repositories
+﻿using FacebookCloneAPI.Models;
+using System.Threading.Tasks;
+
+namespace FacebookCloneAPI.Repositories
 {
     public interface IUserRepository
     {
+        /// <summary>
+        /// Find a user in the db.
+        /// </summary>
+        /// <param name="username"></param>
+        /// <param name="password"></param>
+        /// <returns></returns>
+        Task<User> Find(User user);
+
+        /// <summary>
+        /// Insert a user in the db.
+        /// </summary>
+        /// <param name="user"></param>
+        Task Insert(User user);
     }
 }

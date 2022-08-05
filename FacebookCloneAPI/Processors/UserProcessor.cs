@@ -1,18 +1,27 @@
 ﻿using FacebookCloneAPI.Models;
+using FacebookCloneAPI.Repositories;
 using System.Threading.Tasks;
 
 namespace FacebookCloneAPI.Processors
 {
     public class UserProcessor : IUserProcessor
     {
-        public Task<User> Find(User user)
+        private readonly IUserRepository repo;
+
+        public UserProcessor(IUserRepository repo)
         {
-            throw new System.NotImplementedException();
+            this.repo = repo;
         }
 
-        public Task Insert(User user)
+        public async Task<User> Find(User user)
         {
-            throw new System.NotImplementedException();
+            var result = await this.repo.Find(user);
+            return result;
+        }
+
+        public async Task Insert(User user)
+        {
+            await this.repo.Insert(user);
         }
     }
 }

@@ -11,7 +11,7 @@ namespace FacebookCloneApi.Controllers
     [EnableCors(origins: "http://localhost:4200", headers: "*", methods: "*")]
     public class UsersController : ControllerBase
     {
-        private IUserProcessor processor;
+        private readonly IUserProcessor processor;
 
         public UsersController(IUserProcessor processor)
         {
