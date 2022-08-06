@@ -1,6 +1,7 @@
 ﻿using FacebookCloneAPI.Helper;
 using FacebookCloneAPI.Models;
 using MongoDB.Driver;
+using System;
 using System.Threading.Tasks;
 
 namespace FacebookCloneAPI.Repositories
@@ -16,7 +17,7 @@ namespace FacebookCloneAPI.Repositories
 
         public async Task<User> FindAsync(User user)
         {
-            var cursor = await db.FindAsync(s => s.Username == user.Username);
+            var cursor = await db.FindAsync(s => s.Username == user.Username && s.Password == user.Password);
             var result = cursor.FirstOrDefault();
             if (result == null)
             {
@@ -28,7 +29,7 @@ namespace FacebookCloneAPI.Repositories
 
         public async Task<bool> InsertAsync(User user)
         {
-            var cursor = await db.FindAsync(s => s.Username == user.Username);
+            var cursor = await db.FindAsync(s => s.Username == user.Username && s.Password == user.Password);
             var result = cursor.FirstOrDefault();
             if (result != null)
             {
@@ -37,7 +38,7 @@ namespace FacebookCloneAPI.Repositories
 
             var newUser = new User
             {
-                Id = System.Guid.NewGuid(),
+                Id = Guid.NewGuid(),
                 FirstName = user.FirstName,
                 LastName = user.LastName,
                 Username = user.Username,

@@ -25,7 +25,7 @@ namespace FacebookCloneApi.Controllers
             return await Task.FromResult(true);
         }
 
-        // POST api/Users/postUsers
+        // POST api/Users/postUsers  SignUp
         [HttpPost("postUser")]
         public async Task<ActionResult<bool>> Post([FromBody] User user)
         {
@@ -34,7 +34,7 @@ namespace FacebookCloneApi.Controllers
         }
 
 
-        // GET api/Users/getUsers
+        // GET api/Users/getUsers  LogIn
         [HttpGet("getUser")]
         public async Task<ActionResult<User>> Get([FromBody] User user)
         {
@@ -48,7 +48,7 @@ namespace FacebookCloneApi.Controllers
                 return await Task.FromResult(NotFound());
             }
 
-            return await Task.FromResult(user);
+            return await Task.FromResult(result);
         }
     }
 }
