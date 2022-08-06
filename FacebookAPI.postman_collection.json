@@ -2,7 +2,8 @@
 	"info": {
 		"_postman_id": "e4510466-9178-4563-838c-9e5dcdf5baac",
 		"name": "FacebookAPI",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10410795"
 	},
 	"item": [
 		{
@@ -55,7 +56,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"username\": \"username\",\r\n    \"password\": \"password\",\r\n    \"firstName\": \"\",\r\n    \"lastName\": \"\"\r\n}",
+					"raw": "{\r\n    \"username\": \"sammy1@gmail.com\",\r\n    \"password\": \"sammy1234\",\r\n    \"firstName\": \"thenia\",\r\n    \"lastName\": \"koutro\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -79,6 +80,42 @@
 			"response": []
 		},
 		{
+			"name": "Delete Users",
+			"protocolProfileBehavior": {
+				"strictSSL": false
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/Users/deleteUsers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"Users",
+						"deleteUsers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Get User",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true,
@@ -92,7 +129,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"username\":\"test\",\r\n    \"password\":\"test@gmail.com\"\r\n}",
+					"raw": "{\r\n    \"username\": \"sammy1@gmail.com\",\r\n    \"password\": \"sammy1234\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"

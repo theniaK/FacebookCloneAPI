@@ -30,7 +30,11 @@ namespace FacebookCloneApi.Controllers
         public async Task<ActionResult<bool>> Post([FromBody] User user)
         {
             var userExists = await this.processor.InsertAsync(user);
-            return await Task.FromResult(userExists);
+            if (!userExists)
+            {
+                return await Task.FromResult(BadRequest("The user exists!"));
+            }
+            return await Task.FromResult(Ok("User inserted succesfully!"));
         }
 
 
@@ -45,10 +49,17 @@ namespace FacebookCloneApi.Controllers
             var result = await this.processor.FindAsync(user);
             if (result is null)
             {
-                return await Task.FromResult(NotFound());
+                return await Task.FromResult(NotFound("User not found!"));
             }
 
             return await Task.FromResult(result);
+        }
+
+        [HttpDelete("deleteUsers")]
+        public async Task<ActionResult> DeleteALl()
+        {
+            await this.processor.DeleteAsync();
+            return await Task.FromResult(Ok("All users deleted!"));
         }
     }
 }

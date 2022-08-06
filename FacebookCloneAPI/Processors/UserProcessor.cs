@@ -13,6 +13,11 @@ namespace FacebookCloneAPI.Processors
             this.repo = repo;
         }
 
+        public async Task DeleteAsync()
+        {
+            await this.repo.DeleteAsync();
+        }
+
         public async Task<User> FindAsync(User user)
         {
             var result = await this.repo.FindAsync(user);
